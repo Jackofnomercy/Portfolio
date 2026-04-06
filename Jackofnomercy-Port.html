@@ -1,0 +1,1408 @@
+Here's the full HTML code with everything embedded (CSS, JavaScript, images, and the working Spline 3D iframe). Simply copy this code, save it as index.html, and open it in any browser or upload to any hosting platform:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jack's Web3 Portfolio - Community Moderator, Content Creator, and Host specializing in Web3 gaming and community management">
+    <meta name="keywords" content="Web3, Portfolio, Community Manager, Content Creator, NFT, Gaming">
+    <meta name="author" content="Jack">
+    <title>Jack's Portfolio - Web3 Community Moderator & Content Creator</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FEFDFB;
+            --bg-card: #FFFEF9;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #888888;
+            --accent-yellow: #FFC107;
+            --accent-yellow-dark: #FFB300;
+            --accent-yellow-light: #FFF9E6;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0 7.6923%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-yellow-dark), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-weight: 400;
+            font-family: inherit;
+        }
+
+        nav button:hover {
+            color: var(--accent-yellow-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 7.6923% 60px;
+            background: 
+                radial-gradient(ellipse at top left, rgba(255, 193, 7, 0.08), transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(255, 179, 0, 0.06), transparent 50%);
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title-accent {
+            background: linear-gradient(135deg, var(--accent-yellow-dark), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 520px;
+            margin-bottom: 32px;
+        }
+
+        .hero-image {
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 193, 7, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 16px 48px rgba(255, 193, 7, 0.3);
+            border-color: var(--accent-yellow);
+        }
+
+        .hero-image:hover::before {
+            opacity: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-yellow-dark));
+            color: #1a1a1a;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary i {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+        .spline-container {
+            width: 100%;
+            height: 700px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .spline-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 7.6923%;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            animation: fadeInLeft 0.6s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-icon {
+            color: var(--accent-yellow-dark);
+            font-size: 32px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(180deg, transparent, rgba(255, 193, 7, 0.03), transparent);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-avatar {
+            flex-shrink: 0;
+            width: 320px;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 193, 7, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .about-avatar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(255, 193, 7, 0.2);
+            border-color: var(--accent-yellow);
+        }
+
+        .about-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: rgba(255, 249, 230, 0.3);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0s; }
+        .skill-card:nth-child(2) { animation-delay: 0.1s; }
+        .skill-card:nth-child(3) { animation-delay: 0.2s; }
+        .skill-card:nth-child(4) { animation-delay: 0.3s; }
+        .skill-card:nth-child(5) { animation-delay: 0.4s; }
+        .skill-card:nth-child(6) { animation-delay: 0.5s; }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-yellow);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent-yellow-light), rgba(255, 193, 7, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-yellow-dark);
+            font-size: 28px;
+        }
+
+        .skill-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* Work Experience */
+        .experience {
+            background: linear-gradient(180deg, transparent, rgba(255, 193, 7, 0.02), transparent);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-yellow), var(--accent-yellow-dark));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.15s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.45s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.75s; }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -56px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-yellow-dark);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 2px var(--accent-yellow-light);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: var(--bg-primary);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-yellow);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateX(4px);
+        }
+
+        .timeline-header {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .company-logo {
+            flex-shrink: 0;
+            width: 76px;
+            height: 76px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            background: white;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .company-logo:hover {
+            border-color: var(--accent-yellow);
+            transform: scale(1.05);
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .timeline-info {
+            flex: 1;
+        }
+
+        .timeline-period {
+            font-size: 13px;
+            color: var(--accent-yellow-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .timeline-organization {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-top: 14px;
+        }
+
+        /* Content Section */
+        .content {
+            background: rgba(255, 249, 230, 0.2);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .content-card:nth-child(1) { animation-delay: 0s; }
+        .content-card:nth-child(2) { animation-delay: 0.1s; }
+        .content-card:nth-child(3) { animation-delay: 0.2s; }
+        .content-card:nth-child(4) { animation-delay: 0.3s; }
+        .content-card:nth-child(5) { animation-delay: 0.4s; }
+        .content-card:nth-child(6) { animation-delay: 0.5s; }
+
+        .content-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-yellow);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .content-card.twitter-card {
+            border-color: rgba(29, 161, 242, 0.2);
+        }
+
+        .content-card.twitter-card:hover {
+            border-color: #1DA1F2;
+        }
+
+        .content-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .content-card:hover .content-image {
+            transform: scale(1.05);
+        }
+
+        .content-info {
+            padding: 24px;
+        }
+
+        .twitter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(29, 161, 242, 0.1);
+            color: #1DA1F2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .content-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .content-description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .contact-card:nth-child(1) { animation-delay: 0s; }
+        .contact-card:nth-child(2) { animation-delay: 0.1s; }
+        .contact-card:nth-child(3) { animation-delay: 0.2s; }
+        .contact-card:nth-child(4) { animation-delay: 0.3s; }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-yellow);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-yellow-light), rgba(255, 193, 7, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-yellow-dark);
+            font-size: 32px;
+        }
+
+        .contact-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .contact-handle {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-align: center;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 40px 7.6923%;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .footer-text i {
+            color: var(--accent-yellow-dark);
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+            font-size: 15px;
+        }
+
+        .toast.success {
+            background: #10b981;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container {
+                gap: 40px;
+            }
+            
+            .spline-container {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .spline-container {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header {
+                padding: 0 20px;
+                height: 70px;
+            }
+            
+            .hero {
+                padding: 100px 20px 60px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-images {
+                max-width: 100%;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-avatar {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .about-text p {
+                font-size: 18px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-marker {
+                left: -41px;
+                width: 14px;
+                height: 14px;
+            }
+            
+            .timeline-content {
+                padding: 24px;
+            }
+            
+            .timeline-title {
+                font-size: 20px;
+            }
+            
+            .company-logo {
+                width: 64px;
+                height: 64px;
+            }
+            
+            .spline-container {
+                height: 400px;
+            }
+            
+            .toast {
+                right: 10px;
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-images {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+        }
+
+        /* Loading State */
+        img {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        img.loaded {
+            animation: none;
+            background: none;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Web3 Portfolio</div>
+            <nav id="desktop-nav">
+                <button onclick="scrollToSection('home')">Home</button>
+                <button onclick="scrollToSection('about')">About</button>
+                <button onclick="scrollToSection('skills')">Skills</button>
+                <button onclick="scrollToSection('experience')">Experience</button>
+                <button onclick="scrollToSection('content')">Content</button>
+                <button onclick="scrollToSection('contact')">Contact</button>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div>
+                <h1 class="hero-title">
+                    Welcome to <span class="hero-title-accent">Jack's Portfolio</span>
+                </h1>
+                <p class="hero-subtitle">Community Moderator | Content Creator | Host</p>
+                
+                <div class="hero-images">
+                    <div class="hero-image">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490684978978357249/bafkreigkxkzt2vv4whz36hya2j22nag3o6ubaurci7biheazjq4xwwedwm.png?ex=69d4f412&is=69d3a292&hm=c172703d50bf6f11d5050f4c4c3e3fed185ecb69baee9ec2e26fe649efc81747&format=webp&quality=lossless&width=930&height=930" alt="Web3 Avatar 1" loading="lazy">
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490685049291407664/bafkreidmo3wlaz76z3vjmhx7b5wpj3e7faoxpbofer3p7rj5j3u6m3sep4.png?ex=69d4f423&is=69d3a2a3&hm=c4ea51a965b31c51337394c8e407bd500c02e7d53325cc14585b0a98bb562228&format=webp&quality=lossless&width=1400&height=800" alt="Web3 Avatar 2" loading="lazy">
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490685162936205402/QmUR8twWg3Gfj7k3f5fx45YC36YDrPZ2Ma399i6PRWUtnw.png?ex=69d4f43e&is=69d3a2be&hm=5e373a6b596d0ec28acc669294d5c41f44c4efdd4bc0c6f5f5417ce8b0cd6627&format=webp&quality=lossless&width=1400&height=800" alt="Web3 Avatar 3" loading="lazy">
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="scrollToSection('about')">
+                    Scroll Down <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+            <div style="height:100%; width:100%; display:flex; justify-content:center; align-items:center;">
+  <img src="https://media.discordapp.net/attachments/1490644712506396732/1490711468390482000/4096.jpeg?ex=69d50cbe&is=69d3bb3e&hm=7433f890fa640b52e5d71c1b2f6ad76a20b84ce15504f46992d9ad4a583d3bd0&=&format=webp&width=438&height=438" 
+       style="width:100%; height:100%; object-fit:cover; border-radius:20px;" />
+</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <i class="fas fa-sparkles section-icon"></i>
+                <h2 class="section-title">Who Am I</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-avatar">
+                    <img src="https://customer-assets.emergentagent.com/job_blockchain-hub-50/artifacts/29a791ja_image.png" alt="Jack's Avatar" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p>I'm an 18-year-old Web3 content creator and community manager with over 3 years in the space, focused on making Web3 gaming and projects easier to understand. I create simple, informative content through short posts and videos, helping users stay updated and navigate the ecosystem with clarity.</p>
+                    <p>Alongside content, I actively manage and support communities by keeping them engaged, organized, and valuable for members. I focus on consistency, simplifying complex ideas, and helping both beginners and growing Web3 communities stay active and informed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <i class="fas fa-bolt section-icon"></i>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-users"></i></div>
+                    <div class="skill-name">Community Management</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-award"></i></div>
+                    <div class="skill-name">Community Leadership</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <div class="skill-name">Content Creation</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-user-friends"></i></div>
+                    <div class="skill-name">Collaboration Management</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-calendar"></i></div>
+                    <div class="skill-name">Event Hosting</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-comments"></i></div>
+                    <div class="skill-name">English Communication (B2 Level – IELTS Certified)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <i class="fas fa-briefcase section-icon"></i>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682004143083611/at1o49pa_400x400.png?ex=69d4f14d&is=69d39fcd&hm=5a0a30dd26b7d71fa93ee2db42ee463413bf64da39afa2b3129b2080c9e3d440&format=webp&quality=lossless&width=500&height=500" alt="Legion Logo" loading="lazy">
+                            </div>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Apr 2026 – Present</div>
+                                <h3 class="timeline-title">Head of Community</h3>
+                                <div class="timeline-organization">Legion (Founded by Jesus Martinez)</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Leading and managing the Legion community, overseeing engagement, activities, and overall growth. Responsible for maintaining a strong and active community environment.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <a href="https://x.com/GamingGridx" target="_blank" rel="noopener noreferrer" class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682170535313508/MAJYduXE_400x400.png?ex=69d4f174&is=69d39ff4&hm=fcb9a092050112123767d2bc64b98aa09568441e7ff57337ff7884b976ab9fb6&format=webp&quality=lossless&width=499&height=499" alt="Gaming Grid Logo" loading="lazy">
+                            </a>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Jul 2025 – Present</div>
+                                <h3 class="timeline-title">Community Intern</h3>
+                                <div class="timeline-organization">Gaming Grid (Founded by Yellow Panther)</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Supported community operations, assisted in organizing game nights, and helped manage user engagement as an active community helper.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <a href="https://x.com/Immutable" target="_blank" rel="noopener noreferrer" class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682341855854722/yAJxsR4W_400x400.png?ex=69d4f19d&is=69d3a01d&hm=ea5bdf794a0c671032a9dc6f14ff7dcb4fad1ec2ad3678b5c7ab92e5db17f38f&format=webp&quality=lossless&width=500&height=500" alt="Immutable Logo" loading="lazy">
+                            </a>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Mar 2026 – Present</div>
+                                <h3 class="timeline-title">Starter Creator</h3>
+                                <div class="timeline-organization">Immutable</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Contributing as a content creator within the Immutable ecosystem, creating and sharing Web3-focused content to engage and inform the community.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <a href="https://x.com/ElixirGuild" target="_blank" rel="noopener noreferrer" class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682488564093029/kTFc2Bx__400x400.png?ex=69d4f1c0&is=69d3a040&hm=f34a157f0aa116240e12b7f75119c85e5d051f984ae00d7a9d03f78897cc5aa7&format=webp&quality=lossless&width=438&height=438" alt="Elixir Gaming Guild Logo" loading="lazy">
+                            </a>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Mar 2026 – Present</div>
+                                <h3 class="timeline-title">Content Creator</h3>
+                                <div class="timeline-organization">Elixir Gaming Guild</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Creating engaging content and supporting community initiatives within the gaming guild ecosystem.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <a href="https://x.com/SlingshotDAO" target="_blank" rel="noopener noreferrer" class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682650099318895/SFyrFR-h_400x400.png?ex=69d4f1e7&is=69d3a067&hm=53b5806f97b15f61b115528d43ea0e36ec7e0c4c3c60e3b18d834bdb76e725c9&format=webp&quality=lossless&width=500&height=500" alt="Slingshot DAO Logo" loading="lazy">
+                            </a>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Jun 2025 – Feb 2026</div>
+                                <h3 class="timeline-title">Collab Manager | Community Helper | Event Host</h3>
+                                <div class="timeline-organization">Slingshot DAO</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Managed partnerships and collaborations, supported community engagement, and hosted events to increase participation and activity.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <a href="https://x.com/N7Tribe" target="_blank" rel="noopener noreferrer" class="company-logo">
+                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682734551760976/codjreu1_400x400.png?ex=69d4f1fb&is=69d3a07b&hm=b7016b70b95ab58d2ff844246921427c2c747a41ba7865fd77ecea11c79ab963&format=webp&quality=lossless&width=500&height=500" alt="N7 Tribe Logo" loading="lazy">
+                            </a>
+                            <div class="timeline-info">
+                                <div class="timeline-period">Dec 2025 – Mar 2026</div>
+                                <h3 class="timeline-title">Community Lead & Host</h3>
+                                <div class="timeline-organization">N7 Tribe (Founded by Nickytha)</div>
+                            </div>
+                        </div>
+                        <p class="timeline-description">Led community activities and hosted events, ensuring engagement and growth within the community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content" id="content">
+        <div class="section-container">
+            <div class="section-header">
+                <i class="fas fa-file-alt section-icon"></i>
+                <h2 class="section-title">Content's</h2>
+            </div>
+            <div class="content-grid">
+                <!-- Content 1 - Olderfall -->
+                <a href="https://twitter.com/Jackofnomercy/status/2040351103146230058" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490686116779790487/image.png?ex=69d4f521&is=69d3a3a1&hm=a038a0d4d2037392abc925eb34a986e9c9affaec6a6c1805f13df3b66f550205&format=webp&quality=lossless&width=688&height=388" alt="Olderfall Game" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Olderfall</h3>
+                        <p class="content-description">Just stepped into the arena for the first time and man, @Olderfall feels so good. It is a fun tactical auto-battler where you build your own team of unique Fallen gladiators and command them in fast strategic battles.</p>
+                    </div>
+                </a>
+
+                <!-- Content 2 - Tomoland -->
+                <a href="https://twitter.com/Jackofnomercy/status/2035588419641036839" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://customer-assets.emergentagent.com/job_blockchain-hub-50/artifacts/1d0wvifp_image.png" alt="Tomoland Game" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Tomoland</h3>
+                        <p class="content-description">First time playing @tomoland_app and I'm already hooked 🎮 The game is really engaging and a bit addictive, the more you explore the more you discover what it can do. Tomoland feels like more than just a game, it's a full Web3 ecosystem.</p>
+                    </div>
+                </a>
+
+                <!-- Content 3 - Clash of Coins -->
+                <a href="https://twitter.com/Jackofnomercy/status/2039130328212934699" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490686572197187725/image.png?ex=69d4f58e&is=69d3a40e&hm=56f28c21b67b18c8a2e57f31a0cc0a21684cff52ccf6110bdbe6319f99a2095a&format=webp&quality=lossless&width=688&height=386" alt="Clash of Coins Game" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Clash of Coins</h3>
+                        <p class="content-description">Is your mouse surviving this game, or are you buying a new one tomorrow? I'm talking about @clashofcoins. It starts simple, build your land, grow stronger, step onto the live map. But then the pace hits. Click after click, decision after decision...</p>
+                    </div>
+                </a>
+
+                <!-- Content 4 - Villains Gamenight -->
+                <a href="https://twitter.com/Jackofnomercy/status/2037924018200993809" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490687024171061288/image.png?ex=69d4f5fa&is=69d3a47a&hm=f7baf2026316740d36c6914d08ca8b25f9e989a7f9dfa1ab8b00420f97c57f4f&format=webp&quality=lossless&width=1420&height=800" alt="Villains Gamenight" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Villains Gamenight</h3>
+                        <p class="content-description">Did you join yesterday's gamenight on @Immutable? If not, you missed out on a lot of fun, including Sugga mommy too. We had an awesome gamenight hosted by @Rikuuen along with the shoutcast team and I was also part of it.</p>
+                    </div>
+                </a>
+
+                <!-- Content 5 - Nomstead -->
+                <a href="https://twitter.com/Jackofnomercy/status/2029474618143093042" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490687946976919663/image.png?ex=69d4f6d6&is=69d3a556&hm=10ec3fb17850ae7a00a185c9ff08b6866dc9d4567448c70c1b38b155881a3ac3&format=webp&quality=lossless&width=1423&height=800" alt="Nomstead Game" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Nomstead</h3>
+                        <p class="content-description">Want to play a fun sandbox game? @NomSteadGame is here for you! It's a chill sandbox game where you build your own kingdom, trade with players, and grow your land step by step. Powered by @Immutable. Btw, this is my first voiceover video.</p>
+                    </div>
+                </a>
+
+                <!-- Content 6 - Top 6 Games -->
+                <a href="https://twitter.com/Jackofnomercy/status/2009759566805029157" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
+                    <div class="content-image-wrapper">
+                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490688090686357575/image.png?ex=69d4f6f8&is=69d3a578&hm=203bcc9ad4344e0e1452551151ec83bdbf3403acf400a90fc9b89f58af19bede&format=webp&quality=lossless&width=688&height=388" alt="Top 6 Immutable Games" class="content-image" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <div class="twitter-badge">
+                            <i class="fab fa-twitter"></i> Twitter Post
+                        </div>
+                        <h3 class="content-title">Top 6 Immutable Games that I loved</h3>
+                        <p class="content-description">A few games I personally like and have played, available on @Immutable Play. I suggest you try them too. Starting with @TheTreeverse - Open-world classless MMORPG with flexible progression via Knowledge Tree instead of fixed classes.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <i class="fas fa-paper-plane section-icon"></i>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-grid">
+                <!-- Twitter -->
+                <a href="https://x.com/Jackofnomercy" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-name">Twitter</h3>
+                        <p class="contact-handle">@Jackofnomercy</p>
+                    </div>
+                </a>
+
+                <!-- Discord -->
+                <div class="contact-card" onclick="copyToClipboard('Jackfonomercy', 'Discord')">
+                    <div class="contact-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-name">Discord</h3>
+                        <p class="contact-handle">Jackfonomercy</p>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/jackofnomercy?igsh=ZGhlNjI2cWxubmoy" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-name">Instagram</h3>
+                        <p class="contact-handle">@jackofnomercy</p>
+                    </div>
+                </a>
+
+                <!-- Email -->
+                <div class="contact-card" onclick="copyToClipboard('Jackofnomercy69@gmail.com', 'Email')">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="contact-name">Email</h3>
+                        <p class="contact-handle">Jackofnomercy69@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">
+            Built with <i class="fas fa-heart"></i> in the Web3 space
+        </p>
+        <p class="footer-copyright">© 2024 Web3 Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            if (sectionId === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text, type) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(type + ' copied to clipboard!', 'success');
+                }).catch(() => {
+                    fallbackCopy(text, type);
+                });
+            } else {
+                fallbackCopy(text, type);
+            }
+        }
+
+        // Fallback copy method for older browsers
+        function fallbackCopy(text, type) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(type + ' copied to clipboard!', 'success');
+            } catch (err) {
+                showToast('Failed to copy ' + type, 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            toast.innerHTML = '<i class="fas fa-check-circle"></i> ' + message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Mobile menu toggle (placeholder)
+        function toggleMobileMenu() {
+            alert('Mobile menu: Use desktop view for full navigation experience');
+        }
+
+        // Image loading handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+                
+                // If image is already cached
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
+            });
+        });
+
+        // Prevent right-click on images (optional)
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

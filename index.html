@@ -1,3 +1,5 @@
+Perfect! I'll update the HTML with all your requested changes. Here's the complete modified code:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,6 +273,10 @@
             animation: fadeInLeft 0.6s ease-out;
         }
 
+        .section-header.center {
+            justify-content: center;
+        }
+
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
@@ -443,7 +449,6 @@
         .timeline-item:nth-child(3) { animation-delay: 0.3s; }
         .timeline-item:nth-child(4) { animation-delay: 0.45s; }
         .timeline-item:nth-child(5) { animation-delay: 0.6s; }
-        .timeline-item:nth-child(6) { animation-delay: 0.75s; }
 
         .timeline-item:last-child {
             margin-bottom: 0;
@@ -643,7 +648,97 @@
             color: var(--text-secondary);
         }
 
+        /* Partners Section */
+        .partners {
+            background: linear-gradient(180deg, transparent, rgba(255, 193, 7, 0.03), transparent);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 32px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .partner-box:nth-child(1) { animation-delay: 0s; }
+        .partner-box:nth-child(2) { animation-delay: 0.05s; }
+        .partner-box:nth-child(3) { animation-delay: 0.1s; }
+        .partner-box:nth-child(4) { animation-delay: 0.15s; }
+        .partner-box:nth-child(5) { animation-delay: 0.2s; }
+        .partner-box:nth-child(6) { animation-delay: 0.25s; }
+        .partner-box:nth-child(7) { animation-delay: 0.3s; }
+        .partner-box:nth-child(8) { animation-delay: 0.35s; }
+        .partner-box:nth-child(9) { animation-delay: 0.4s; }
+        .partner-box:nth-child(10) { animation-delay: 0.45s; }
+        .partner-box:nth-child(11) { animation-delay: 0.5s; }
+        .partner-box:nth-child(12) { animation-delay: 0.55s; }
+        .partner-box:nth-child(13) { animation-delay: 0.6s; }
+        .partner-box:nth-child(14) { animation-delay: 0.65s; }
+        .partner-box:nth-child(15) { animation-delay: 0.7s; }
+        .partner-box:nth-child(16) { animation-delay: 0.75s; }
+        .partner-box:nth-child(17) { animation-delay: 0.8s; }
+        .partner-box:nth-child(18) { animation-delay: 0.85s; }
+        .partner-box:nth-child(19) { animation-delay: 0.9s; }
+        .partner-box:nth-child(20) { animation-delay: 0.95s; }
+
+        .partner-box:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-yellow);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .partner-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 193, 7, 0.2);
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-box:hover .partner-image {
+            border-color: var(--accent-yellow);
+        }
+
+        .partner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .partner-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
         /* Contact Section */
+        .contact {
+            background: rgba(255, 249, 230, 0.2);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -703,6 +798,99 @@
             color: var(--text-muted);
             text-align: center;
             word-break: break-all;
+        }
+
+        .calendly-section {
+            margin-top: 80px;
+            padding: 70px 60px;
+            background: linear-gradient(135deg, var(--accent-yellow-light), rgba(255, 193, 7, 0.2));
+            border: 3px solid var(--accent-yellow);
+            border-radius: 24px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 12px 40px rgba(255, 193, 7, 0.25);
+            animation: fadeInUp 0.8s ease-out;
+            transition: all 0.4s ease;
+        }
+
+        .calendly-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 56px rgba(255, 193, 7, 0.35);
+        }
+
+        .calendly-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .calendly-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-yellow-dark));
+            color: #1a1a1a;
+            padding: 24px 64px;
+            border-radius: 16px;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .calendly-button:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 16px 48px rgba(255, 193, 7, 0.4);
+        }
+
+        .calendly-button i {
+            font-size: 28px;
+        }
+
+        /* Responsive for Calendly */
+        @media (max-width: 768px) {
+            .calendly-section {
+                margin-top: 50px;
+                padding: 50px 40px;
+            }
+
+            .calendly-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+
+            .calendly-button {
+                padding: 20px 48px;
+                font-size: 20px;
+            }
+
+            .calendly-button i {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendly-section {
+                padding: 40px 24px;
+            }
+
+            .calendly-title {
+                font-size: 28px;
+            }
+
+            .calendly-button {
+                padding: 18px 40px;
+                font-size: 18px;
+                gap: 12px;
+            }
         }
 
         /* Footer */
@@ -774,6 +962,10 @@
             .spline-container {
                 height: 500px;
             }
+
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media (max-width: 1024px) {
@@ -787,6 +979,10 @@
             
             .spline-container {
                 order: -1;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -885,6 +1081,20 @@
                 left: 10px;
                 bottom: 10px;
             }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .partner-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .partner-name {
+                font-size: 14px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -895,6 +1105,10 @@
             
             .hero-title {
                 font-size: 32px;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -931,6 +1145,7 @@
                 <button onclick="scrollToSection('skills')">Skills</button>
                 <button onclick="scrollToSection('experience')">Experience</button>
                 <button onclick="scrollToSection('content')">Content</button>
+                <button onclick="scrollToSection('partners')">Partners</button>
                 <button onclick="scrollToSection('contact')">Contact</button>
             </nav>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -948,26 +1163,28 @@
                 </h1>
                 <p class="hero-subtitle">Community Moderator | Content Creator | Host</p>
                 
+                
                 <div class="hero-images">
                     <div class="hero-image">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490684978978357249/bafkreigkxkzt2vv4whz36hya2j22nag3o6ubaurci7biheazjq4xwwedwm.png?ex=69d4f412&is=69d3a292&hm=c172703d50bf6f11d5050f4c4c3e3fed185ecb69baee9ec2e26fe649efc81747&format=webp&quality=lossless&width=930&height=930" alt="Web3 Avatar 1" loading="lazy">
+                        <img src="src/av2.jpg" alt="Web3 Avatar 1" loading="lazy"> 
                     </div>
                     <div class="hero-image">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490685049291407664/bafkreidmo3wlaz76z3vjmhx7b5wpj3e7faoxpbofer3p7rj5j3u6m3sep4.png?ex=69d4f423&is=69d3a2a3&hm=c4ea51a965b31c51337394c8e407bd500c02e7d53325cc14585b0a98bb562228&format=webp&quality=lossless&width=1400&height=800" alt="Web3 Avatar 2" loading="lazy">
+                        <img src="src/av1.jpg" alt="Web3 Avatar 2" loading="lazy"> 
                     </div>
                     <div class="hero-image">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490685162936205402/QmUR8twWg3Gfj7k3f5fx45YC36YDrPZ2Ma399i6PRWUtnw.png?ex=69d4f43e&is=69d3a2be&hm=5e373a6b596d0ec28acc669294d5c41f44c4efdd4bc0c6f5f5417ce8b0cd6627&format=webp&quality=lossless&width=1400&height=800" alt="Web3 Avatar 3" loading="lazy">
+                        <img src="src/av3.jpg" alt="Web3 Avatar 3" loading="lazy"> 
                     </div>
                 </div>
+
 
                 <button class="btn-primary" onclick="scrollToSection('about')">
                     Scroll Down <i class="fas fa-arrow-down"></i>
                 </button>
             </div>
-            <div style="height:100%; width:100%; display:flex; justify-content:center; align-items:center;">
-  <img src="https://media.discordapp.net/attachments/1490644712506396732/1490711468390482000/4096.jpeg?ex=69d50cbe&is=69d3bb3e&hm=7433f890fa640b52e5d71c1b2f6ad76a20b84ce15504f46992d9ad4a583d3bd0&=&format=webp&width=438&height=438" 
-       style="width:100%; height:100%; object-fit:cover; border-radius:20px;" />
-</div>
+            <div class="spline-container">
+
+                <img src="src/spline.jpeg" alt="Photo" width="670" height="700" loading="lazy">
+            </div>
         </div>
     </section>
 
@@ -1034,31 +1251,13 @@
                 <h2 class="section-title">Work Experience</h2>
             </div>
             <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682004143083611/at1o49pa_400x400.png?ex=69d4f14d&is=69d39fcd&hm=5a0a30dd26b7d71fa93ee2db42ee463413bf64da39afa2b3129b2080c9e3d440&format=webp&quality=lossless&width=500&height=500" alt="Legion Logo" loading="lazy">
-                            </div>
-                            <div class="timeline-info">
-                                <div class="timeline-period">Apr 2026 – Present</div>
-                                <h3 class="timeline-title">Head of Community</h3>
-                                <div class="timeline-organization">Legion (Founded by Jesus Martinez)</div>
-                            </div>
-                        </div>
-                        <p class="timeline-description">Leading and managing the Legion community, overseeing engagement, activities, and overall growth. Responsible for maintaining a strong and active community environment.</p>
-                    </div>
-                </div>
-
-                <!-- Experience 2 -->
+                <!-- Experience 1 - Gaming Grid -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <a href="https://x.com/GamingGridx" target="_blank" rel="noopener noreferrer" class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682170535313508/MAJYduXE_400x400.png?ex=69d4f174&is=69d39ff4&hm=fcb9a092050112123767d2bc64b98aa09568441e7ff57337ff7884b976ab9fb6&format=webp&quality=lossless&width=499&height=499" alt="Gaming Grid Logo" loading="lazy">
+                                <img src="src/gg.jpg" alt="Gaming Grid Logo" loading="lazy">
                             </a>
                             <div class="timeline-info">
                                 <div class="timeline-period">Jul 2025 – Present</div>
@@ -1070,13 +1269,13 @@
                     </div>
                 </div>
 
-                <!-- Experience 3 -->
+                <!-- Experience 2 - Immutable -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <a href="https://x.com/Immutable" target="_blank" rel="noopener noreferrer" class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682341855854722/yAJxsR4W_400x400.png?ex=69d4f19d&is=69d3a01d&hm=ea5bdf794a0c671032a9dc6f14ff7dcb4fad1ec2ad3678b5c7ab92e5db17f38f&format=webp&quality=lossless&width=500&height=500" alt="Immutable Logo" loading="lazy">
+                                <img src="src/immut.jpg" alt="Immutable Logo" loading="lazy">
                             </a>
                             <div class="timeline-info">
                                 <div class="timeline-period">Mar 2026 – Present</div>
@@ -1088,13 +1287,13 @@
                     </div>
                 </div>
 
-                <!-- Experience 4 -->
+                <!-- Experience 3 - Elixir Gaming Guild -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <a href="https://x.com/ElixirGuild" target="_blank" rel="noopener noreferrer" class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682488564093029/kTFc2Bx__400x400.png?ex=69d4f1c0&is=69d3a040&hm=f34a157f0aa116240e12b7f75119c85e5d051f984ae00d7a9d03f78897cc5aa7&format=webp&quality=lossless&width=438&height=438" alt="Elixir Gaming Guild Logo" loading="lazy">
+                                <img src="src/egg.jpg" alt="Elixir Gaming Guild Logo" loading="lazy">
                             </a>
                             <div class="timeline-info">
                                 <div class="timeline-period">Mar 2026 – Present</div>
@@ -1106,13 +1305,13 @@
                     </div>
                 </div>
 
-                <!-- Experience 5 -->
+                <!-- Experience 4 - Slingshot DAO -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <a href="https://x.com/SlingshotDAO" target="_blank" rel="noopener noreferrer" class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682650099318895/SFyrFR-h_400x400.png?ex=69d4f1e7&is=69d3a067&hm=53b5806f97b15f61b115528d43ea0e36ec7e0c4c3c60e3b18d834bdb76e725c9&format=webp&quality=lossless&width=500&height=500" alt="Slingshot DAO Logo" loading="lazy">
+                                <img src="src/slim.jpg" alt="Slingshot DAO Logo" loading="lazy">
                             </a>
                             <div class="timeline-info">
                                 <div class="timeline-period">Jun 2025 – Feb 2026</div>
@@ -1124,13 +1323,13 @@
                     </div>
                 </div>
 
-                <!-- Experience 6 -->
+                <!-- Experience 5 - N7 Tribe -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <a href="https://x.com/N7Tribe" target="_blank" rel="noopener noreferrer" class="company-logo">
-                                <img src="https://media.discordapp.net/attachments/1484503368608125050/1490682734551760976/codjreu1_400x400.png?ex=69d4f1fb&is=69d3a07b&hm=b7016b70b95ab58d2ff844246921427c2c747a41ba7865fd77ecea11c79ab963&format=webp&quality=lossless&width=500&height=500" alt="N7 Tribe Logo" loading="lazy">
+                                <img src="src/n7.jpg" alt="N7 Tribe Logo" loading="lazy">
                             </a>
                             <div class="timeline-info">
                                 <div class="timeline-period">Dec 2025 – Mar 2026</div>
@@ -1156,7 +1355,7 @@
                 <!-- Content 1 - Olderfall -->
                 <a href="https://twitter.com/Jackofnomercy/status/2040351103146230058" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
                     <div class="content-image-wrapper">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490686116779790487/image.png?ex=69d4f521&is=69d3a3a1&hm=a038a0d4d2037392abc925eb34a986e9c9affaec6a6c1805f13df3b66f550205&format=webp&quality=lossless&width=688&height=388" alt="Olderfall Game" class="content-image" loading="lazy">
+                        <img src="src/olderfall.png" alt="Olderfall Game" class="content-image" loading="lazy"> 
                     </div>
                     <div class="content-info">
                         <div class="twitter-badge">
@@ -1184,7 +1383,7 @@
                 <!-- Content 3 - Clash of Coins -->
                 <a href="https://twitter.com/Jackofnomercy/status/2039130328212934699" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
                     <div class="content-image-wrapper">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490686572197187725/image.png?ex=69d4f58e&is=69d3a40e&hm=56f28c21b67b18c8a2e57f31a0cc0a21684cff52ccf6110bdbe6319f99a2095a&format=webp&quality=lossless&width=688&height=386" alt="Clash of Coins Game" class="content-image" loading="lazy">
+                        <img src="src/coc.png" alt="Clash of Coins Game" class="content-image" loading="lazy"> 
                     </div>
                     <div class="content-info">
                         <div class="twitter-badge">
@@ -1198,7 +1397,7 @@
                 <!-- Content 4 - Villains Gamenight -->
                 <a href="https://twitter.com/Jackofnomercy/status/2037924018200993809" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
                     <div class="content-image-wrapper">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490687024171061288/image.png?ex=69d4f5fa&is=69d3a47a&hm=f7baf2026316740d36c6914d08ca8b25f9e989a7f9dfa1ab8b00420f97c57f4f&format=webp&quality=lossless&width=1420&height=800" alt="Villains Gamenight" class="content-image" loading="lazy">
+                        <img src="src/vt.png" alt="Villains Gamenight" class="content-image" loading="lazy"> 
                     </div>
                     <div class="content-info">
                         <div class="twitter-badge">
@@ -1212,7 +1411,7 @@
                 <!-- Content 5 - Nomstead -->
                 <a href="https://twitter.com/Jackofnomercy/status/2029474618143093042" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
                     <div class="content-image-wrapper">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490687946976919663/image.png?ex=69d4f6d6&is=69d3a556&hm=10ec3fb17850ae7a00a185c9ff08b6866dc9d4567448c70c1b38b155881a3ac3&format=webp&quality=lossless&width=1423&height=800" alt="Nomstead Game" class="content-image" loading="lazy">
+                        <img src="src/nomstead.png" alt="Nomstead Game" class="content-image" loading="lazy">
                     </div>
                     <div class="content-info">
                         <div class="twitter-badge">
@@ -1226,7 +1425,7 @@
                 <!-- Content 6 - Top 6 Games -->
                 <a href="https://twitter.com/Jackofnomercy/status/2009759566805029157" target="_blank" rel="noopener noreferrer" class="content-card twitter-card">
                     <div class="content-image-wrapper">
-                        <img src="https://media.discordapp.net/attachments/1490644712506396732/1490688090686357575/image.png?ex=69d4f6f8&is=69d3a578&hm=203bcc9ad4344e0e1452551151ec83bdbf3403acf400a90fc9b89f58af19bede&format=webp&quality=lossless&width=688&height=388" alt="Top 6 Immutable Games" class="content-image" loading="lazy">
+                        <img src="src/immut.png" alt="Top 6 Immutable Games" class="content-image" loading="lazy"> 
                     </div>
                     <div class="content-info">
                         <div class="twitter-badge">
@@ -1240,10 +1439,150 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="section-container">
+            <div class="section-header center">
+                <i class="fas fa-handshake section-icon"></i>
+                <h2 class="section-title">Partnered With Them</h2>
+            </div>
+            <div class="partners-grid">
+                <!-- Partner Box 1 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/op.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Olympus Prime</div>
+                </div>
+
+                <!-- Partner Box 2 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                       <img src="src/cz.png" alt="">
+                    </div>
+                    <div class="partner-name">Crimson Zeal</div>
+                </div>
+
+                <!-- Partner Box 3 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/pw.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Pwnage Guild</div>
+                </div>
+
+                <!-- Partner Box 4 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/qu.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Qube Community</div>
+                </div>
+
+                <!-- Partner Box 5 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/cs.png" alt="">
+                    </div>
+                    <div class="partner-name">Captain Side</div>
+                </div>
+
+                <!-- Partner Box 6 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 7 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 8 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 9 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/ww.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Wilder World</div>
+                </div>
+
+                <!-- Partner Box 10 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/siph.png" alt="">
+                    </div>
+                    <div class="partner-name">Sipher Odyssey</div>
+                </div>
+
+                <!-- Partner Box 11 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <img src="src/ss.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Slipshot</div>
+                </div>
+
+                <!-- Partner Box 12 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                       <img src="src/ilv.jpg" alt="">
+                    </div>
+                    <div class="partner-name">Illuvium</div>
+                </div>
+
+                <!-- Partner Box 13 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 14 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 15 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+
+                <!-- Partner Box 16 -->
+                <div class="partner-box">
+                    <div class="partner-image">
+                        <!-- Add image here -->
+                    </div>
+                    <div class="partner-name">Partner Name</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header center">
                 <i class="fas fa-paper-plane section-icon"></i>
                 <h2 class="section-title">Let's Connect</h2>
             </div>
@@ -1253,20 +1592,20 @@
                     <div class="contact-icon">
                         <i class="fab fa-twitter"></i>
                     </div>
-                    <div>
+                    <div style="text-align: center; width: 100%;">
                         <h3 class="contact-name">Twitter</h3>
                         <p class="contact-handle">@Jackofnomercy</p>
                     </div>
                 </a>
 
                 <!-- Discord -->
-                <div class="contact-card" onclick="copyToClipboard('Jackfonomercy', 'Discord')">
+                <div class="contact-card" onclick="copyToClipboard('Jackofnomercy', 'Discord')">
                     <div class="contact-icon">
                         <i class="fab fa-discord"></i>
                     </div>
-                    <div>
+                    <div style="text-align: center; width: 100%;">
                         <h3 class="contact-name">Discord</h3>
-                        <p class="contact-handle">Jackfonomercy</p>
+                        <p class="contact-handle">Jackofnomercy</p>
                     </div>
                 </div>
 
@@ -1275,7 +1614,7 @@
                     <div class="contact-icon">
                         <i class="fab fa-instagram"></i>
                     </div>
-                    <div>
+                    <div style="text-align: center; width: 100%;">
                         <h3 class="contact-name">Instagram</h3>
                         <p class="contact-handle">@jackofnomercy</p>
                     </div>
@@ -1286,14 +1625,23 @@
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div>
+                    <div style="text-align: center; width: 100%;">
                         <h3 class="contact-name">Email</h3>
                         <p class="contact-handle">Jackofnomercy69@gmail.com</p>
                     </div>
                 </div>
+               
+            </div> <!-- Appointment Section -->
+                <div class="calendly-section">
+                <h2 class="calendly-title">Book an Appointment</h2>
+                <a href="https://calendly.com/jackofnomercy69" target="_blank" rel="noopener noreferrer" class="calendly-button">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Book Here</span>
+                </a>
             </div>
-        </div>
+        </div> 
     </section>
+   
 
     <!-- Footer -->
     <footer>
